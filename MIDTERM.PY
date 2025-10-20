@@ -6,7 +6,7 @@ root.title("My First Tkinter App")
 root.geometry("400x300")  # width x height
 
 # Create a label
-label = tk.Label(root, text="Hello, Tkinter!", font=("Arial", 16))
+label = tk.Label(root, text="Hell, Tkinter!", font=("Arial", 16))
 label.pack(pady=20)
 
 # Create an entry box
