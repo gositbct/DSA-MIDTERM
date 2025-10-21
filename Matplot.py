@@ -1,3 +1,6 @@
+import math
+import matplotlib.pyplot as plt
+
 def plot_bst(root):
     def _plot(node, x, y, dx):
         if not node:

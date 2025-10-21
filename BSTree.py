@@ -1,5 +1,4 @@
-import heapq
-
+__all__ = ["BSTNode", "BST"]
 class BSTNode:
     def __init__(self, key):
         self.key = key

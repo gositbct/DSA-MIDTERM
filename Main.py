@@ -1,7 +1,11 @@
-
+from BSTree import *
+from Graph import *
+from Heap import *
+from Matplot import *
 import heapq
 import matplotlib.pyplot as plt
 import math
+
 
 def main():
     bst = BST()

@@ -1,3 +1,4 @@
+import heapq
 class Heap:
     def __init__(self, mode='max'):
         self.mode = mode
