@@ -6,7 +6,6 @@ import heapq
 import matplotlib.pyplot as plt
 import math
 
-
 def main():
     bst = BST()
     heap_max = Heap('max')
@@ -40,11 +39,11 @@ def main():
                     except ValueError:
                         print("Please enter an integer."); continue
                     bst.insert(v)
-                    if input("Again (y/n)? ").strip().lower() != 'y': break
+                    if input("Again (y/n)?: ").strip().lower() != 'y': break
                 print("Done adding to BST.")
             else:
                 while True:
-                    h = input("Use (M)ax or (m)in heap? ").strip()
+                    h = input("Use (M)ax or (m)in heap?: ").strip()
                     if h == 'M' or h.lower() == 'max':
                         heap = heap_max; break
                     if h == 'm' or h.lower() == 'min':
@@ -56,7 +55,7 @@ def main():
                     except ValueError:
                         print("Please enter an integer."); continue
                     heap.insert(v)
-                    if input("Again (y/n)? ").strip().lower() != 'y': break
+                    if input("Again (y/n)?: ").strip().lower() != 'y': break
                 print("Done adding to heap.")
 
 
