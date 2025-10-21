@@ -307,27 +307,38 @@ def main():
             print("Exiting program...")
             break
 
+        # ...existing code...
         elif choice == '1':
-            again = 'y'
-            while again == 'y':
+            t = input("Add to (B)ST or (H)eap?: ").strip().lower()
+            if t == 'b':
                 while True:
-                    htype = input("Use (max) heap or (min) heap?: ").strip()
-                    if htype.lower() == 'max' or htype == 'M':
-                        heap = heap_max
-                        last_heap_type = 'Max'
-                        break
-                    if htype.lower() == 'min' or htype == 'm':
-                        heap = heap_min
-                        last_heap_type = 'Min'
-                        break
-                    print("Please enter exactly 'M' (Max) or 'm' (Min), or type 'max' / 'min'.")
-                val = int(input("Enter value to add: "))
-                heap.insert(val)
-                last_heap = heap
-                again = input("Again (y/n)? ").lower()
+                    try:
+                        v = int(input("Enter value: ").strip())
+                    except ValueError:
+                        print("Please enter an integer."); continue
+                    bst.insert(v)
+                    if input("Again (y/n)? ").strip().lower() != 'y': break
+                print("Done adding to BST.")
+            else:
+                while True:
+                    h = input("Use (M)ax or (m)in heap? ").strip()
+                    if h == 'M' or h.lower() == 'max':
+                        heap = heap_max; break
+                    if h == 'm' or h.lower() == 'min':
+                        heap = heap_min; break
+                    print("Enter 'M' or 'm'.")
+                while True:
+                    try:
+                        v = int(input("Enter value: ").strip())
+                    except ValueError:
+                        print("Please enter an integer."); continue
+                    heap.insert(v)
+                    if input("Again (y/n)? ").strip().lower() != 'y': break
+                print("Done adding to heap.")
+
 
         elif choice == '2':
-            target = input("Edit (B)ST or (H)eap? ").lower()
+            target = input("Edit (B)ST or (H)eap?: ").lower()
             if target == 'b':
                 old = int(input("Enter old value: "))
                 new = int(input("Enter new value: "))
